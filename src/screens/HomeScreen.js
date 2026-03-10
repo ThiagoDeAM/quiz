@@ -1,8 +1,9 @@
-import { ImageBackground, StyleSheet, View } from 'react-native';
+import { ImageBackground, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSQLiteContext } from 'expo-sqlite';
 import StartContent from '../components/StartContent';
 import useQuiz from '../hooks/useQuiz';
+import styles from './HomeScreen.styles';
 
 export default function HomeScreen() {
   const db = useSQLiteContext();
@@ -30,15 +31,3 @@ export default function HomeScreen() {
     </ImageBackground>
   );
 }
-
-const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-  },
-  overlay: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.25)',
-  },
-});
